@@ -30,7 +30,12 @@ namespace MemoryBrainGame
 
         private void exit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Memory Brain Game",
+                MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void options_Click(object sender, EventArgs e)

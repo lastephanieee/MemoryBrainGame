@@ -49,7 +49,7 @@
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.progressBar2 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -252,12 +252,12 @@
             this.pictureBox15.TabIndex = 23;
             this.pictureBox15.TabStop = false;
             // 
-            // progressBar1
+            // progressBar2
             // 
-            this.progressBar1.Location = new System.Drawing.Point(28, 451);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(529, 42);
-            this.progressBar1.TabIndex = 28;
+            this.progressBar2.Location = new System.Drawing.Point(28, 451);
+            this.progressBar2.Name = "progressBar2";
+            this.progressBar2.Size = new System.Drawing.Size(529, 42);
+            this.progressBar2.TabIndex = 28;
             // 
             // Form5
             // 
@@ -265,7 +265,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::MemoryBrainGame.Properties.Resources._13120714_10207811138588890_598986955_o;
             this.ClientSize = new System.Drawing.Size(584, 561);
-            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.progressBar2);
             this.Controls.Add(this.pictureBox11);
             this.Controls.Add(this.pictureBox12);
             this.Controls.Add(this.pictureBox13);
@@ -337,6 +337,6 @@
         private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.PictureBox pictureBox14;
         private System.Windows.Forms.PictureBox pictureBox15;
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar progressBar2;
     }
 }

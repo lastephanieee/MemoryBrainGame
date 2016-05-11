@@ -42,8 +42,8 @@ namespace MemoryBrainGame
         {
             level = 3;
             this.Close();
-            Form2 form2 = new Form2();
-            form2.Show();
+            Form6 form6 = new Form6();
+            form6.Show();
         }
     }
 }
