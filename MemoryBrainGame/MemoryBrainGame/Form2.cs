@@ -27,7 +27,10 @@ namespace MemoryBrainGame
         {
             InitializeComponent();
             DoubleBuffered = true;
-
+            timer1.Start();
+            timer1.Enabled = true;
+            progressBar1.Minimum = 1;
+            progressBar1.Maximum = 120;
             level = Form1.level;
             levels[0] = 12;
             levels[1] = 20;
@@ -276,6 +279,11 @@ namespace MemoryBrainGame
             }
 
             Invalidate();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            progressBar1.Increment(+1);
         }
     }
 }

@@ -15,6 +15,15 @@ namespace MemoryBrainGame
         public Form6()
         {
             InitializeComponent();
+            timer1.Start();
+            timer1.Enabled = true;
+            progressBar3.Minimum = 1;
+            progressBar3.Maximum = 480;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            progressBar3.Increment(+1);
         }
     }
 }
