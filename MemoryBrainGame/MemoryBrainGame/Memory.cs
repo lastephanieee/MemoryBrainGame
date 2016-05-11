@@ -43,7 +43,7 @@ namespace MemoryBrainGame
                     mat[i, j] = -1;
                 }
             }
-
+            r = new Random();
             mapForRandom = new Dictionary<int, int>();
         }
 
@@ -96,6 +96,9 @@ namespace MemoryBrainGame
         }
 
 
-
+        public int getValue(int x, int y)
+        {
+            return mat[x, y];
+        }
     }
 }

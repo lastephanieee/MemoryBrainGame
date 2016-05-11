@@ -20,24 +20,11 @@ namespace MemoryBrainGame
         public int level;
         public Dictionary<int, Image> images;
 
-        internal Memory Memory
-        {
-            get
-            {
-                return memory;
-            }
-
-            set
-            {
-                memory = value;
-            }
-        }
-
         public Form2()
         {
             InitializeComponent();
             DoubleBuffered = true;
-           
+
             first = new PictureBox();
             second = new PictureBox();
             clicked = 0;
@@ -45,8 +32,10 @@ namespace MemoryBrainGame
 
             level = Form1.level;
 
-            Memory = new Memory(level);
+            memory = new Memory(level);
+            memory.fill();
             images = new Dictionary<int, Image>();
+
             initialize();
         }
 
@@ -74,18 +63,18 @@ namespace MemoryBrainGame
 
         private void pictureBox10_Click(object sender, EventArgs e)
         {
-            int temp = 1;
+            int temp = memory.getValue(1, 3);
             Image bmp;
             images.TryGetValue(temp, out bmp);
             this.pictureBox10.Image = bmp;
             clicking(this.pictureBox10);
             Invalidate();
-           
+
         }
 
         private void pictureBox9_Click(object sender, EventArgs e)
         {
-            int temp = 2;
+            int temp = memory.getValue(0, 2);
             Image bmp;
             images.TryGetValue(temp, out bmp);
             this.pictureBox9.Image = bmp;
@@ -95,7 +84,7 @@ namespace MemoryBrainGame
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            int temp = 3;
+            int temp = memory.getValue(0, 0);
             Image bmp;
             images.TryGetValue(temp, out bmp);
             this.pictureBox1.Image = bmp;
@@ -105,7 +94,7 @@ namespace MemoryBrainGame
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-            int temp = 4;
+            int temp = memory.getValue(0, 1);
             Image bmp;
             images.TryGetValue(temp, out bmp);
             this.pictureBox6.Image = bmp;
@@ -116,7 +105,7 @@ namespace MemoryBrainGame
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            int temp = 5;
+            int temp = memory.getValue(1, 0);
             Image bmp;
             images.TryGetValue(temp, out bmp);
             this.pictureBox3.Image = bmp;
@@ -126,7 +115,7 @@ namespace MemoryBrainGame
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            int temp = 6;
+            int temp = memory.getValue(1, 1);
             Image bmp;
             images.TryGetValue(temp, out bmp);
             this.pictureBox4.Image = bmp;
@@ -136,7 +125,7 @@ namespace MemoryBrainGame
 
         private void pictureBox7_Click(object sender, EventArgs e)
         {
-            int temp = 6;
+            int temp = memory.getValue(1, 2);
             Image bmp;
             images.TryGetValue(temp, out bmp);
             this.pictureBox7.Image = bmp;
@@ -146,7 +135,7 @@ namespace MemoryBrainGame
 
         private void pictureBox12_Click(object sender, EventArgs e)
         {
-            int temp = 5;
+            int temp = memory.getValue(0, 3);
             Image bmp;
             images.TryGetValue(temp, out bmp);
             this.pictureBox12.Image = bmp;
@@ -156,7 +145,7 @@ namespace MemoryBrainGame
 
         private void pictureBox11_Click(object sender, EventArgs e)
         {
-            int temp = 4;
+            int temp = memory.getValue(2, 3);
             Image bmp;
             images.TryGetValue(temp, out bmp);
             this.pictureBox11.Image = bmp;
@@ -166,7 +155,7 @@ namespace MemoryBrainGame
 
         private void pictureBox8_Click(object sender, EventArgs e)
         {
-            int temp = 3;
+            int temp = memory.getValue(2, 2);
             Image bmp;
             images.TryGetValue(temp, out bmp);
             this.pictureBox8.Image = bmp;
@@ -176,7 +165,7 @@ namespace MemoryBrainGame
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            int temp = 1;
+            int temp = memory.getValue(2, 1);
             Image bmp;
             images.TryGetValue(temp, out bmp);
             this.pictureBox5.Image = bmp;
@@ -186,7 +175,7 @@ namespace MemoryBrainGame
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            int temp = 2;
+            int temp = memory.getValue(2, 0);
             Image bmp;
             images.TryGetValue(temp, out bmp);
             this.pictureBox2.Image = bmp;

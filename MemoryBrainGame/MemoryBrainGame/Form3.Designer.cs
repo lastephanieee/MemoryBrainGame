@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.label1 = new System.Windows.Forms.Label();
-            this.exit = new System.Windows.Forms.Button();
-            this.start = new System.Windows.Forms.Button();
-            this.options = new System.Windows.Forms.Button();
+            this.hard = new System.Windows.Forms.Button();
+            this.easy = new System.Windows.Forms.Button();
+            this.medium = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -47,44 +47,47 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Choose your level";
             // 
-            // exit
+            // hard
             // 
-            this.exit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("exit.BackgroundImage")));
-            this.exit.Font = new System.Drawing.Font("Script MT Bold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exit.ForeColor = System.Drawing.Color.Black;
-            this.exit.Location = new System.Drawing.Point(139, 299);
-            this.exit.Margin = new System.Windows.Forms.Padding(0);
-            this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(253, 67);
-            this.exit.TabIndex = 9;
-            this.exit.Text = "Hard";
-            this.exit.UseVisualStyleBackColor = false;
+            this.hard.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("hard.BackgroundImage")));
+            this.hard.Font = new System.Drawing.Font("Script MT Bold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hard.ForeColor = System.Drawing.Color.Black;
+            this.hard.Location = new System.Drawing.Point(139, 299);
+            this.hard.Margin = new System.Windows.Forms.Padding(0);
+            this.hard.Name = "hard";
+            this.hard.Size = new System.Drawing.Size(253, 67);
+            this.hard.TabIndex = 9;
+            this.hard.Text = "Hard";
+            this.hard.UseVisualStyleBackColor = false;
+            this.hard.Click += new System.EventHandler(this.button3_Click);
             // 
-            // start
+            // easy
             // 
-            this.start.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("start.BackgroundImage")));
-            this.start.Font = new System.Drawing.Font("Script MT Bold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.start.ForeColor = System.Drawing.Color.Black;
-            this.start.Location = new System.Drawing.Point(139, 140);
-            this.start.Margin = new System.Windows.Forms.Padding(0);
-            this.start.Name = "start";
-            this.start.Size = new System.Drawing.Size(253, 67);
-            this.start.TabIndex = 8;
-            this.start.Text = "Easy";
-            this.start.UseVisualStyleBackColor = false;
+            this.easy.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("easy.BackgroundImage")));
+            this.easy.Font = new System.Drawing.Font("Script MT Bold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.easy.ForeColor = System.Drawing.Color.Black;
+            this.easy.Location = new System.Drawing.Point(139, 140);
+            this.easy.Margin = new System.Windows.Forms.Padding(0);
+            this.easy.Name = "easy";
+            this.easy.Size = new System.Drawing.Size(253, 67);
+            this.easy.TabIndex = 8;
+            this.easy.Text = "Easy";
+            this.easy.UseVisualStyleBackColor = false;
+            this.easy.Click += new System.EventHandler(this.button1_Click);
             // 
-            // options
+            // medium
             // 
-            this.options.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("options.BackgroundImage")));
-            this.options.Font = new System.Drawing.Font("Script MT Bold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.options.ForeColor = System.Drawing.Color.Black;
-            this.options.Location = new System.Drawing.Point(139, 218);
-            this.options.Margin = new System.Windows.Forms.Padding(0);
-            this.options.Name = "options";
-            this.options.Size = new System.Drawing.Size(253, 67);
-            this.options.TabIndex = 7;
-            this.options.Text = "Medium";
-            this.options.UseVisualStyleBackColor = false;
+            this.medium.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("medium.BackgroundImage")));
+            this.medium.Font = new System.Drawing.Font("Script MT Bold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.medium.ForeColor = System.Drawing.Color.Black;
+            this.medium.Location = new System.Drawing.Point(139, 218);
+            this.medium.Margin = new System.Windows.Forms.Padding(0);
+            this.medium.Name = "medium";
+            this.medium.Size = new System.Drawing.Size(253, 67);
+            this.medium.TabIndex = 7;
+            this.medium.Text = "Medium";
+            this.medium.UseVisualStyleBackColor = false;
+            this.medium.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form3
             // 
@@ -92,10 +95,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::MemoryBrainGame.Properties.Resources._13073173_10207811163989525_1338813235_o1;
             this.ClientSize = new System.Drawing.Size(570, 492);
-            this.Controls.Add(this.exit);
-            this.Controls.Add(this.start);
-            this.Controls.Add(this.options);
+            this.Controls.Add(this.hard);
+            this.Controls.Add(this.easy);
+            this.Controls.Add(this.medium);
             this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form3";
             this.Text = "Memory Brain Game";
@@ -107,8 +111,8 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button exit;
-        private System.Windows.Forms.Button start;
-        private System.Windows.Forms.Button options;
+        private System.Windows.Forms.Button hard;
+        private System.Windows.Forms.Button easy;
+        private System.Windows.Forms.Button medium;
     }
 }

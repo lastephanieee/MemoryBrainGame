@@ -23,13 +23,8 @@ namespace MemoryBrainGame
         private void start_Click(object sender, EventArgs e)
         {
             Form2 form2 = new Form2();
+            //this.Close();
             form2.Show();
-            if (form2.Visible)
-            {
-                this.Hide();
-            }
-            
-            this.Show();
 
         }
 

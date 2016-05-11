@@ -23,20 +23,27 @@ namespace MemoryBrainGame
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             level = 0;
             this.Close();
+            Form2 form2 = new Form2();
+            form2.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             level = 1;
             this.Close();
+            Form5 form5 = new Form5();
+            form5.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             level = 3;
             this.Close();
+            Form2 form2 = new Form2();
+            form2.Show();
         }
     }
 }
