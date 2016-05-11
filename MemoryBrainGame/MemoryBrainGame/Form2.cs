@@ -12,11 +12,14 @@ namespace MemoryBrainGame
 {
     public partial class Form2 : Form
     {
-        public PictureBox first;
-        public PictureBox second;
-        public int clicked;
-        public bool finish;
+        public Image firstClicked;
+        public Image secondClicked;
+        public Image firstOld;
+        public Image secondOld;
         private Memory memory;
+        public PictureBox pbFirst;
+        public PictureBox pbSecond;
+        public int[] levels = new int[3];
         public int level;
         public Dictionary<int, Image> images;
 
@@ -25,12 +28,10 @@ namespace MemoryBrainGame
             InitializeComponent();
             DoubleBuffered = true;
 
-            first = new PictureBox();
-            second = new PictureBox();
-            clicked = 0;
-            finish = false;
-
             level = Form1.level;
+            levels[0] = 12;
+            levels[1] = 20;
+            levels[2] = 30;
 
             memory = new Memory(level);
             memory.fill();
@@ -55,9 +56,32 @@ namespace MemoryBrainGame
             images.Add(12, new Bitmap(MemoryBrainGame.Properties.Resources.sql));
         }
 
-        private void clicking(PictureBox pb)
+        private bool clicking(Image oldImage, Image newImage)
         {
-
+            if (firstClicked == null)
+            {
+                firstClicked = newImage;
+                firstOld = oldImage;
+                return true;
+            }
+            else
+            {
+                secondClicked = newImage;
+                secondOld = newImage;
+                if (firstClicked == secondClicked)
+                {
+                    levels[level]--;
+                    if (levels[level] == 0)
+                    {
+                        this.Close();
+                        Form5 form5 = new Form5();
+                        form5.Show();
+                    }
+                    return true;
+                }
+                else
+                    return false;
+            }
 
         }
 
@@ -66,8 +90,14 @@ namespace MemoryBrainGame
             int temp = memory.getValue(1, 3);
             Image bmp;
             images.TryGetValue(temp, out bmp);
+            Image oldie = this.pictureBox10.Image;
             this.pictureBox10.Image = bmp;
-            clicking(this.pictureBox10);
+
+            if (!clicking(oldie, bmp))
+            {
+
+            }
+
             Invalidate();
 
         }
@@ -77,8 +107,14 @@ namespace MemoryBrainGame
             int temp = memory.getValue(0, 2);
             Image bmp;
             images.TryGetValue(temp, out bmp);
+            Image oldie = this.pictureBox9.Image;
             this.pictureBox9.Image = bmp;
-            clicking(this.pictureBox9);
+
+            if (!clicking(oldie, bmp))
+            {
+
+            }
+
             Invalidate();
         }
 
@@ -87,8 +123,13 @@ namespace MemoryBrainGame
             int temp = memory.getValue(0, 0);
             Image bmp;
             images.TryGetValue(temp, out bmp);
+            Image oldie = this.pictureBox1.Image;
             this.pictureBox1.Image = bmp;
-            clicking(this.pictureBox1);
+
+            if (!clicking(oldie, bmp))
+            {
+            }
+
             Invalidate();
         }
 
@@ -97,8 +138,13 @@ namespace MemoryBrainGame
             int temp = memory.getValue(0, 1);
             Image bmp;
             images.TryGetValue(temp, out bmp);
+            Image oldie = this.pictureBox6.Image;
             this.pictureBox6.Image = bmp;
-            clicking(this.pictureBox6);
+
+            if (!clicking(oldie, bmp))
+            {
+
+            }
             Invalidate();
 
         }
@@ -108,8 +154,14 @@ namespace MemoryBrainGame
             int temp = memory.getValue(1, 0);
             Image bmp;
             images.TryGetValue(temp, out bmp);
+            Image oldie = this.pictureBox3.Image;
             this.pictureBox3.Image = bmp;
-            clicking(this.pictureBox3);
+
+            if (!clicking(oldie, bmp))
+            {
+
+            }
+
             Invalidate();
         }
 
@@ -118,8 +170,14 @@ namespace MemoryBrainGame
             int temp = memory.getValue(1, 1);
             Image bmp;
             images.TryGetValue(temp, out bmp);
+            Image oldie = this.pictureBox4.Image;
             this.pictureBox4.Image = bmp;
-            clicking(this.pictureBox4);
+
+            if (!clicking(oldie, bmp))
+            {
+
+            }
+
             Invalidate();
         }
 
@@ -128,8 +186,14 @@ namespace MemoryBrainGame
             int temp = memory.getValue(1, 2);
             Image bmp;
             images.TryGetValue(temp, out bmp);
+            Image oldie = this.pictureBox7.Image;
             this.pictureBox7.Image = bmp;
-            clicking(this.pictureBox7);
+
+            if (!clicking(oldie, bmp))
+            {
+
+            }
+
             Invalidate();
         }
 
@@ -138,8 +202,14 @@ namespace MemoryBrainGame
             int temp = memory.getValue(0, 3);
             Image bmp;
             images.TryGetValue(temp, out bmp);
+            Image oldie = this.pictureBox12.Image;
             this.pictureBox12.Image = bmp;
-            clicking(this.pictureBox12);
+
+            if (!clicking(oldie, bmp))
+            {
+
+            }
+
             Invalidate();
         }
 
@@ -148,8 +218,14 @@ namespace MemoryBrainGame
             int temp = memory.getValue(2, 3);
             Image bmp;
             images.TryGetValue(temp, out bmp);
+            Image oldie = this.pictureBox11.Image;
             this.pictureBox11.Image = bmp;
-            clicking(this.pictureBox11);
+
+            if (!clicking(oldie, bmp))
+            {
+
+            }
+
             Invalidate();
         }
 
@@ -158,8 +234,14 @@ namespace MemoryBrainGame
             int temp = memory.getValue(2, 2);
             Image bmp;
             images.TryGetValue(temp, out bmp);
+            Image oldie = this.pictureBox8.Image;
             this.pictureBox8.Image = bmp;
-            clicking(this.pictureBox8);
+
+            if (!clicking(oldie, bmp))
+            {
+
+            }
+
             Invalidate();
         }
 
@@ -168,18 +250,31 @@ namespace MemoryBrainGame
             int temp = memory.getValue(2, 1);
             Image bmp;
             images.TryGetValue(temp, out bmp);
+            Image oldie = this.pictureBox5.Image;
             this.pictureBox5.Image = bmp;
-            clicking(this.pictureBox5);
+
+            if (!clicking(oldie, bmp))
+            {
+
+            }
+
             Invalidate();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             int temp = memory.getValue(2, 0);
+
             Image bmp;
             images.TryGetValue(temp, out bmp);
+            Image oldie = this.pictureBox2.Image;
             this.pictureBox2.Image = bmp;
-            clicking(this.pictureBox2);
+
+            if (!clicking(oldie, bmp))
+            {
+
+            }
+
             Invalidate();
         }
     }
