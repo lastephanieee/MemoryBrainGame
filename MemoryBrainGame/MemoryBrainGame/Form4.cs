@@ -15,6 +15,7 @@ namespace MemoryBrainGame
         public Form4()
         {
             InitializeComponent();
+            DoubleBuffered = true;
         }
     }
 }

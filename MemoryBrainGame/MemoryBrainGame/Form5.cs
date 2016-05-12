@@ -21,6 +21,7 @@ namespace MemoryBrainGame
         public Form5()
         {
             InitializeComponent();
+            DoubleBuffered = true;
             timer1.Start();
             timer1.Enabled = true;
             progressBar1.Minimum = 1;
