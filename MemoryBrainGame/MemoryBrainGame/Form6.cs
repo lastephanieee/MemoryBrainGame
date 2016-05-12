@@ -25,19 +25,17 @@ namespace MemoryBrainGame
             timer1.Start();
             timer1.Enabled = true;
             progressBar3.Minimum = 1;
-            progressBar3.Maximum = 480;
+            progressBar3.Maximum = 800;
             level = 15;
 
             foreach (PictureBox pb in cardsHolder.Controls)
             {
                 points.Add(pb.Location);
-                //Console.WriteLine("adding locations");
             }
 
             foreach (PictureBox pb in cardsHolder.Controls)
             {
                 int next = r.Next(points.Count);
-                //Console.WriteLine(next);
                 Point p = points[next];
                 pb.Location = p;
                 points.Remove(p);
@@ -87,6 +85,22 @@ namespace MemoryBrainGame
         private void timer1_Tick(object sender, EventArgs e)
         {
             progressBar3.Increment(+1);
+            if (progressBar3.Value.Equals(progressBar3.Maximum))
+            {
+                // do whatever you want to do
+                DialogResult result = MessageBox.Show("Do you want to try again?", "Game Over!",
+               MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    Form1 form1 = new Form1();
+                    form1.Show();
+                    this.Close();
+                }
+            }
+            else if(DialogResult == DialogResult.No)
+            {
+                Application.Exit();
+            }
         }
 
         private void CardsCheck_Tick(object sender, EventArgs e)
@@ -100,11 +114,9 @@ namespace MemoryBrainGame
 
         public void check()
         {
-            //Console.WriteLine("hello");
             if (level <= 0)
             {
                 this.Close();
-                //Console.WriteLine("hi");
             }
         }
         #region

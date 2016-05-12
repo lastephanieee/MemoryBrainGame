@@ -24,7 +24,7 @@ namespace MemoryBrainGame
             timer1.Start();
             timer1.Enabled = true;
             progressBar1.Minimum = 1;
-            progressBar1.Maximum = 360;
+            progressBar1.Maximum = 500;
             level = 10;
             Console.WriteLine(level);
 
@@ -32,13 +32,11 @@ namespace MemoryBrainGame
             foreach (PictureBox pb in CardsHolder.Controls)
             {
                 points.Add(pb.Location);
-                //Console.WriteLine("adding locations");
             }
 
             foreach (PictureBox pb in CardsHolder.Controls)
             {
                 int next = r.Next(points.Count);
-                //Console.WriteLine(next);
                 Point p = points[next];
                 pb.Location = p;
                 points.Remove(p);
@@ -73,21 +71,43 @@ namespace MemoryBrainGame
                 pb.Image = Properties.Resources.cover;
             }
         }
-
+        bool flag = false;
         private void timer1_Tick(object sender, EventArgs e)
         {
-            progressBar1.Increment(+1);
+            if (progressBar1.Value < progressBar1.Maximum)
+            {
+                progressBar1.Increment(+1);
+                flag = true;
+            }
+            else 
+            {
+                if (flag)
+                {
+                    DialogResult result = MessageBox.Show("Do you want to try again?", "Game Over!",
+                   MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        Form1 form1 = new Form1();
+                        form1.Show();
+                        this.Close();
+                    }
+                    else if (DialogResult == DialogResult.No)
+                    {
+                        Application.Exit();
+                    }
+                    flag = false;
+                }
+            
+        }
         }
 
         public void check()
         {
-            //Console.WriteLine("hello");
             if (level <= 0)
             {
                 Form6 form6 = new Form6();
                 form6.Show();
                 this.Close();
-                //Console.WriteLine("hi");
             }
         }
 
