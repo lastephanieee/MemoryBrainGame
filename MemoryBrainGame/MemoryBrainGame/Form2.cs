@@ -32,15 +32,26 @@ namespace MemoryBrainGame
             levels[1] = 20;
             levels[2] = 30;
 
+            foreach (PictureBox pb in CardsHolder.Controls)
+            {
+                points.Add(pb.Location);
+                Console.WriteLine("adding locations");
+            }
+
+            foreach (PictureBox pb in CardsHolder.Controls)
+            {
+                int next = r.Next(points.Count);
+                Console.WriteLine(next);
+                Point p = points[next];
+                pb.Location = p;
+                points.Remove(p);
+            }
+
         }
         
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            foreach (PictureBox pb in CardsHolder.Controls)
-            {
-                points.Add(pb.Location);
-            }     
 
             pictureBox1.Image = Properties.Resources.angularjs;
             pictureBox2.Image = Properties.Resources.angularjs;
@@ -55,18 +66,14 @@ namespace MemoryBrainGame
             pictureBox11.Image = Properties.Resources.java;
             pictureBox12.Image = Properties.Resources.java;
 
-            foreach (PictureBox pb in CardsHolder.Controls)
-            {
-                int next = r.Next(points.Count);
-                Point p = points[next];
-                pb.Location = p;
-                points.Remove(p);
-            }
+            
 
             foreach (PictureBox pb in CardsHolder.Controls)
             {
                 pb.Image = Properties.Resources.cover;
             }
+
+            
 
         }
 
