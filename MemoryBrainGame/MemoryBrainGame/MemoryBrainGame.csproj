@@ -196,6 +196,48 @@
     <None Include="Resources\sql.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\brain-creation-idea-vector-icon-set-imagination-solution-mind-intelligence-gear-energy-illustration-56718244.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\earth.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jupiter.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mars.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mercury.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nepturn.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saturn.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\space.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sun.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\texture.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\uranus.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\venus.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wood-floor-turquoise.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\1.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -239,48 +281,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\15.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\brain-creation-idea-vector-icon-set-imagination-solution-mind-intelligence-gear-energy-illustration-56718244.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\earth.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\jupiter.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\mars.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\mercury.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\moon.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\nepturn.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\saturn.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\space.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\sun.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\texture.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\uranus.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\venus.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\wood-floor-turquoise.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
