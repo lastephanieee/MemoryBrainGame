@@ -26,7 +26,7 @@ namespace MemoryBrainGame
             progressBar1.Minimum = 1;
             progressBar1.Maximum = 500;
             level = 10;
-            Console.WriteLine(level);
+            //Console.WriteLine(level);
 
 
             foreach (PictureBox pb in CardsHolder.Controls)
@@ -101,10 +101,12 @@ namespace MemoryBrainGame
         {
             if (level <= 0)
             {
+                timer1.Stop();
+                MessageBox.Show("You completed second level!", "Congratulations!!!", MessageBoxButtons.OK);
                 Form6 form6 = new Form6();
                 form6.Show();
-                this.Close();
-                Console.WriteLine("opening form hard");
+                this.Hide();
+                //Console.WriteLine("opening form hard");
             }
         }
 

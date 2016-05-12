@@ -20,7 +20,7 @@ namespace MemoryBrainGame
 
         public Form6()
         {
-            Console.WriteLine("form6 is opened");
+            //Console.WriteLine("form6 is opened");
             InitializeComponent();
             DoubleBuffered = true;
             timer1.Start();
@@ -45,8 +45,6 @@ namespace MemoryBrainGame
 
         private void Form6_Load(object sender, EventArgs e)
         {
-            Console.Write("Loading...");
-            this.Show();
 
             pictureBox1.Image = Properties.Resources._1;
             pictureBox2.Image = Properties.Resources._1;
@@ -102,11 +100,12 @@ namespace MemoryBrainGame
                     form1.Show();
                     this.Close();
                 }
+                else
+                {
+                    Application.Exit();
+                }
             }
-            else 
-            {
-                Application.Exit();
-            }
+            
         }
 
         private void CardsCheck_Tick(object sender, EventArgs e)
@@ -122,10 +121,12 @@ namespace MemoryBrainGame
         {
             if (level <= 0)
             {
+                timer1.Stop();
+                MessageBox.Show("You completed all three levels!", "Congratulations!!!", MessageBoxButtons.OK);
                 Form1 form1 = new Form1();
-                this.Close();
                 form1.Show();
-                
+                this.Hide();
+
             }
         }
         #region

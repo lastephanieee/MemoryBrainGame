@@ -70,14 +70,16 @@ namespace MemoryBrainGame
 
         public void check()
         {
-            Console.WriteLine("hello");
+            //Console.WriteLine("hello");
             if (level <= 0)
             {
+                timer1.Stop();
+                MessageBox.Show("You completed first level!", "Congratulations!!!", MessageBoxButtons.OK);
                 Form5 form5 = new Form5();
-                this.Close();
                 form5.Show();
-                
-                Console.WriteLine("opening form medium");
+                this.Hide();
+
+                //Console.WriteLine("opening form medium");
             }
         }
         #region
@@ -458,7 +460,7 @@ namespace MemoryBrainGame
         private void timer1_Tick(object sender, EventArgs e)
         {
             progressBar1.Increment(+1);
-            Console.WriteLine(progressBar1.Value);
+            //Console.WriteLine(progressBar1.Value);
             
             if (progressBar1.Value == 250)
             {
