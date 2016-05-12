@@ -12,7 +12,6 @@ namespace MemoryBrainGame
 {
     public partial class Form2 : Form
     {
-        public int[] levels = new int[3];
         public int level;
         PictureBox pendingImage1;
         PictureBox pendingImage2;
@@ -28,11 +27,8 @@ namespace MemoryBrainGame
             timer1.Enabled = true;
             progressBar1.Minimum = 1;
             progressBar1.Maximum = 120;
-            level = Form1.level;
-            levels[0] = 6;
-            levels[1] = 10;
-            levels[2] = 15;
-
+            level = 6;
+     
             foreach (PictureBox pb in CardsHolder.Controls)
             {
                 points.Add(pb.Location);
@@ -67,8 +63,6 @@ namespace MemoryBrainGame
             pictureBox11.Image = Properties.Resources.java;
             pictureBox12.Image = Properties.Resources.java;
 
-            
-
             foreach (PictureBox pb in CardsHolder.Controls)
             {
                 pb.Image = Properties.Resources.cover;
@@ -79,7 +73,7 @@ namespace MemoryBrainGame
         public void check()
         {
             Console.WriteLine("hello");
-            if (levels[level] <= 0)
+            if (level <= 0)
             {
                 Form5 form5 = new Form5();
                 form5.Show();
@@ -87,6 +81,7 @@ namespace MemoryBrainGame
                 Console.WriteLine("hi");
             }
         }
+        #region
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -108,7 +103,7 @@ namespace MemoryBrainGame
                     pendingImage2 = null;
                     pictureBox1.Enabled = false;
                     pictureBox2.Enabled = false;
-                    levels[level]--;
+                    level--;
                     check();
                 }
                 else
@@ -139,7 +134,7 @@ namespace MemoryBrainGame
                     pendingImage2 = null;
                     pictureBox6.Enabled = false;
                     pictureBox5.Enabled = false;
-                    levels[level]--;
+                    level--;
                     check();
                 }
                 else
@@ -170,7 +165,7 @@ namespace MemoryBrainGame
                     pendingImage2 = null;
                     pictureBox9.Enabled = false;
                     pictureBox10.Enabled = false;
-                    levels[level]--;
+                    level--;
                     check();
                 }
                 else
@@ -201,7 +196,7 @@ namespace MemoryBrainGame
                     pendingImage2 = null;
                     pictureBox12.Enabled = false;
                     pictureBox11.Enabled = false;
-                    levels[level]--;
+                    level--;
                     check();
                 }
                 else
@@ -232,7 +227,7 @@ namespace MemoryBrainGame
                     pendingImage2 = null;
                     pictureBox3.Enabled = false;
                     pictureBox4.Enabled = false;
-                    levels[level]--;
+                    level--;
                     check();
                 }
                 else
@@ -263,7 +258,7 @@ namespace MemoryBrainGame
                     pendingImage2 = null;
                     pictureBox4.Enabled = false;
                     pictureBox3.Enabled = false;
-                    levels[level]--;
+                    level--;
                     check();
                 }
                 else
@@ -294,7 +289,7 @@ namespace MemoryBrainGame
                     pendingImage2 = null;
                     pictureBox7.Enabled = false;
                     pictureBox8.Enabled = false;
-                    levels[level]--;
+                    level--;
                     check();
                 }
                 else
@@ -325,7 +320,7 @@ namespace MemoryBrainGame
                     pendingImage2 = null;
                     pictureBox10.Enabled = false;
                     pictureBox9.Enabled = false;
-                    levels[level]--;
+                    level--;
                     check();
                 }
                 else
@@ -356,7 +351,7 @@ namespace MemoryBrainGame
                     pendingImage2 = null;
                     pictureBox2.Enabled = false;
                     pictureBox1.Enabled = false;
-                    levels[level]--;
+                    level--;
                     check();
                 }
                 else
@@ -387,7 +382,7 @@ namespace MemoryBrainGame
                     pendingImage2 = null;
                     pictureBox5.Enabled = false;
                     pictureBox6.Enabled = false;
-                    levels[level]--;
+                    level--;
                     check();
                 }
                 else
@@ -418,7 +413,7 @@ namespace MemoryBrainGame
                     pendingImage2 = null;
                     pictureBox8.Enabled = false;
                     pictureBox7.Enabled = false;
-                    levels[level]--;
+                    level--;
                     check();
                 }
                 else
@@ -449,7 +444,7 @@ namespace MemoryBrainGame
                     pendingImage2 = null;
                     pictureBox11.Enabled = false;
                     pictureBox12.Enabled = false;
-                    levels[level]--;
+                    level--;
                     check();
                 }
                 else
@@ -458,6 +453,8 @@ namespace MemoryBrainGame
                 }
             }
         }
+
+        #endregion
 
         private void timer1_Tick(object sender, EventArgs e)
         {

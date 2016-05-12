@@ -53,6 +53,7 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.CardsHolder = new System.Windows.Forms.Panel();
+            this.cardsCheck = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -84,6 +85,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(101, 98);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Tag = "1";
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox2
@@ -94,6 +96,7 @@
             this.pictureBox2.Size = new System.Drawing.Size(101, 98);
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Tag = "1";
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox5
@@ -104,6 +107,7 @@
             this.pictureBox5.Size = new System.Drawing.Size(101, 98);
             this.pictureBox5.TabIndex = 5;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Tag = "3";
             this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // pictureBox4
@@ -114,6 +118,7 @@
             this.pictureBox4.Size = new System.Drawing.Size(101, 98);
             this.pictureBox4.TabIndex = 6;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Tag = "2";
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // pictureBox3
@@ -124,6 +129,7 @@
             this.pictureBox3.Size = new System.Drawing.Size(101, 98);
             this.pictureBox3.TabIndex = 7;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Tag = "2";
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // pictureBox13
@@ -134,6 +140,7 @@
             this.pictureBox13.Size = new System.Drawing.Size(101, 98);
             this.pictureBox13.TabIndex = 12;
             this.pictureBox13.TabStop = false;
+            this.pictureBox13.Tag = "7";
             this.pictureBox13.Click += new System.EventHandler(this.pictureBox13_Click);
             // 
             // pictureBox14
@@ -144,6 +151,7 @@
             this.pictureBox14.Size = new System.Drawing.Size(101, 98);
             this.pictureBox14.TabIndex = 11;
             this.pictureBox14.TabStop = false;
+            this.pictureBox14.Tag = "7";
             this.pictureBox14.Click += new System.EventHandler(this.pictureBox14_Click);
             // 
             // pictureBox15
@@ -154,6 +162,7 @@
             this.pictureBox15.Size = new System.Drawing.Size(101, 98);
             this.pictureBox15.TabIndex = 10;
             this.pictureBox15.TabStop = false;
+            this.pictureBox15.Tag = "8";
             this.pictureBox15.Click += new System.EventHandler(this.pictureBox15_Click);
             // 
             // pictureBox12
@@ -164,6 +173,7 @@
             this.pictureBox12.Size = new System.Drawing.Size(101, 98);
             this.pictureBox12.TabIndex = 9;
             this.pictureBox12.TabStop = false;
+            this.pictureBox12.Tag = "6";
             this.pictureBox12.Click += new System.EventHandler(this.pictureBox12_Click);
             // 
             // pictureBox11
@@ -174,6 +184,7 @@
             this.pictureBox11.Size = new System.Drawing.Size(101, 98);
             this.pictureBox11.TabIndex = 8;
             this.pictureBox11.TabStop = false;
+            this.pictureBox11.Tag = "6";
             this.pictureBox11.Click += new System.EventHandler(this.pictureBox11_Click);
             // 
             // pictureBox8
@@ -184,6 +195,7 @@
             this.pictureBox8.Size = new System.Drawing.Size(101, 98);
             this.pictureBox8.TabIndex = 22;
             this.pictureBox8.TabStop = false;
+            this.pictureBox8.Tag = "4";
             this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
             // 
             // pictureBox9
@@ -194,6 +206,7 @@
             this.pictureBox9.Size = new System.Drawing.Size(101, 98);
             this.pictureBox9.TabIndex = 21;
             this.pictureBox9.TabStop = false;
+            this.pictureBox9.Tag = "5";
             this.pictureBox9.Click += new System.EventHandler(this.pictureBox9_Click);
             // 
             // pictureBox10
@@ -204,6 +217,7 @@
             this.pictureBox10.Size = new System.Drawing.Size(101, 98);
             this.pictureBox10.TabIndex = 20;
             this.pictureBox10.TabStop = false;
+            this.pictureBox10.Tag = "5";
             this.pictureBox10.Click += new System.EventHandler(this.pictureBox10_Click);
             // 
             // pictureBox7
@@ -214,6 +228,7 @@
             this.pictureBox7.Size = new System.Drawing.Size(101, 98);
             this.pictureBox7.TabIndex = 19;
             this.pictureBox7.TabStop = false;
+            this.pictureBox7.Tag = "4";
             this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
             // pictureBox6
@@ -224,6 +239,7 @@
             this.pictureBox6.Size = new System.Drawing.Size(101, 98);
             this.pictureBox6.TabIndex = 18;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.Tag = "3";
             this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // pictureBox18
@@ -234,6 +250,7 @@
             this.pictureBox18.Size = new System.Drawing.Size(101, 98);
             this.pictureBox18.TabIndex = 27;
             this.pictureBox18.TabStop = false;
+            this.pictureBox18.Tag = "9";
             this.pictureBox18.Click += new System.EventHandler(this.pictureBox18_Click);
             // 
             // pictureBox19
@@ -244,6 +261,7 @@
             this.pictureBox19.Size = new System.Drawing.Size(101, 98);
             this.pictureBox19.TabIndex = 26;
             this.pictureBox19.TabStop = false;
+            this.pictureBox19.Tag = "10";
             this.pictureBox19.Click += new System.EventHandler(this.pictureBox19_Click);
             // 
             // pictureBox20
@@ -254,6 +272,7 @@
             this.pictureBox20.Size = new System.Drawing.Size(101, 98);
             this.pictureBox20.TabIndex = 25;
             this.pictureBox20.TabStop = false;
+            this.pictureBox20.Tag = "10";
             this.pictureBox20.Click += new System.EventHandler(this.pictureBox20_Click);
             // 
             // pictureBox17
@@ -264,6 +283,7 @@
             this.pictureBox17.Size = new System.Drawing.Size(101, 98);
             this.pictureBox17.TabIndex = 24;
             this.pictureBox17.TabStop = false;
+            this.pictureBox17.Tag = "9";
             this.pictureBox17.Click += new System.EventHandler(this.pictureBox17_Click);
             // 
             // pictureBox16
@@ -274,6 +294,7 @@
             this.pictureBox16.Size = new System.Drawing.Size(101, 98);
             this.pictureBox16.TabIndex = 23;
             this.pictureBox16.TabStop = false;
+            this.pictureBox16.Tag = "8";
             this.pictureBox16.Click += new System.EventHandler(this.pictureBox16_Click);
             // 
             // progressBar1
@@ -313,6 +334,11 @@
             this.CardsHolder.Name = "CardsHolder";
             this.CardsHolder.Size = new System.Drawing.Size(529, 410);
             this.CardsHolder.TabIndex = 29;
+            // 
+            // cardsCheck
+            // 
+            this.cardsCheck.Interval = 300;
+            this.cardsCheck.Tick += new System.EventHandler(this.cardsCheck_Tick);
             // 
             // Form5
             // 
@@ -378,5 +404,6 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel CardsHolder;
+        private System.Windows.Forms.Timer cardsCheck;
     }
 }
