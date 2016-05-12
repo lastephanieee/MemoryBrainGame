@@ -49,10 +49,10 @@
 2. Отвори две сликички со кликање врз нив. Ако се исти ќе останат отворени, во спротивно ќе се затворат;
 3. Повторувај го 2. се додека не ги отвориш сите сликички и притоа внимавај на времето кое што тече. 
 
-![homeWindow](https://raw.githubusercontent.com/lastephanieee/MemoryBrainGame/master/MemoryBrainGame/Screenshot_2.jpg)
+![homeWindow](https://raw.githubusercontent.com/lastephanieee/MemoryBrainGame/master/MemoryBrainGame/home.jpg)
 
-![level1](https://raw.githubusercontent.com/lastephanieee/MemoryBrainGame/master/MemoryBrainGame/Screenshot_3.jpg)
+![level1](https://raw.githubusercontent.com/lastephanieee/MemoryBrainGame/master/MemoryBrainGame/level1.jpg)
 
-![level2](https://raw.githubusercontent.com/lastephanieee/MemoryBrainGame/master/MemoryBrainGame/Screenshot_1.jpg)
+![level2](https://raw.githubusercontent.com/lastephanieee/MemoryBrainGame/master/MemoryBrainGame/level2.jpg)
 
-![level3](https://raw.githubusercontent.com/lastephanieee/MemoryBrainGame/master/MemoryBrainGame/Screenshot_4.jpg)
+![level3](https://raw.githubusercontent.com/lastephanieee/MemoryBrainGame/master/MemoryBrainGame/level3.jpg)
