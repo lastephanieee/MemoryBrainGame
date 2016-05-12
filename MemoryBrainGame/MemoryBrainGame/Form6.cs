@@ -20,6 +20,7 @@ namespace MemoryBrainGame
 
         public Form6()
         {
+            Console.WriteLine("form6 is opened");
             InitializeComponent();
             DoubleBuffered = true;
             timer1.Start();
@@ -44,6 +45,9 @@ namespace MemoryBrainGame
 
         private void Form6_Load(object sender, EventArgs e)
         {
+            Console.Write("Loading...");
+            this.Show();
+
             pictureBox1.Image = Properties.Resources._1;
             pictureBox2.Image = Properties.Resources._1;
             pictureBox3.Image = Properties.Resources._2;
@@ -88,6 +92,7 @@ namespace MemoryBrainGame
             if (progressBar3.Value == progressBar3.Maximum)
             {
                 timer1.Stop();
+                progressBar3.Hide();
                 // do whatever you want to do
                 DialogResult result = MessageBox.Show("Do you want to try again?", "Game Over!",
                MessageBoxButtons.YesNo);
@@ -98,7 +103,7 @@ namespace MemoryBrainGame
                     this.Close();
                 }
             }
-            else if(DialogResult == DialogResult.No)
+            else 
             {
                 Application.Exit();
             }
@@ -117,7 +122,10 @@ namespace MemoryBrainGame
         {
             if (level <= 0)
             {
+                Form1 form1 = new Form1();
                 this.Close();
+                form1.Show();
+                
             }
         }
         #region

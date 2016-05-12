@@ -80,15 +80,16 @@ namespace MemoryBrainGame
             if(progressBar1.Value == progressBar1.Maximum)
             {
                 timer1.Stop();
+                progressBar1.Hide();
                 DialogResult result = MessageBox.Show("Do you want to try again?", "Game Over!",
-               MessageBoxButtons.YesNo);
+                MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
                     Form1 form1 = new Form1();
                     form1.Show();
                     this.Close();
                 }
-                else if (DialogResult == DialogResult.No)
+                else 
                 {
                     Application.Exit();
                 }
@@ -103,6 +104,7 @@ namespace MemoryBrainGame
                 Form6 form6 = new Form6();
                 form6.Show();
                 this.Close();
+                Console.WriteLine("opening form hard");
             }
         }
 

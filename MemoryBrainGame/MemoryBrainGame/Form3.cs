@@ -40,7 +40,7 @@ namespace MemoryBrainGame
 
         private void button3_Click(object sender, EventArgs e)
         {
-            level = 3;
+            level = 2;
             this.Close();
             Form6 form6 = new Form6();
             form6.Show();

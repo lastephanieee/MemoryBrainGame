@@ -82,7 +82,6 @@
     <Compile Include="Form6.Designer.cs">
       <DependentUpon>Form6.cs</DependentUpon>
     </Compile>
-    <Compile Include="Memory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -170,9 +169,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cobol.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\html.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\java.png" />
@@ -281,6 +277,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\15.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\javascript.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\php.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\c__.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\html.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\c_.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\angularjs.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\c__.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cobol.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\html.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\java.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

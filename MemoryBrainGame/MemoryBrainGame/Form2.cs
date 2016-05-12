@@ -74,9 +74,10 @@ namespace MemoryBrainGame
             if (level <= 0)
             {
                 Form5 form5 = new Form5();
-                form5.Show();
                 this.Close();
-                Console.WriteLine("hi");
+                form5.Show();
+                
+                Console.WriteLine("opening form medium");
             }
         }
         #region
@@ -462,6 +463,7 @@ namespace MemoryBrainGame
             if (progressBar1.Value == 250)
             {
                 timer1.Stop();
+                progressBar1.Hide();
                 // do whatever you want to do
                 DialogResult result = MessageBox.Show("Do you want to try again?", "Game Over!",
                 MessageBoxButtons.YesNo);
@@ -471,9 +473,10 @@ namespace MemoryBrainGame
                     form1.Show();
                     this.Close();
                 }
-                else if (DialogResult == DialogResult.No)
+                else 
                 {
                     Application.Exit();
+                    
                 }
               
             }
