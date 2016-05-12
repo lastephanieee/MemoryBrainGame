@@ -73,16 +73,6 @@ namespace MemoryBrainGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _13073173_10207811163989525_1338813235_o1 {
-            get {
-                object obj = ResourceManager.GetObject("13073173_10207811163989525_1338813235_o1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap _13078274_10207811140828946_1903292277_o {
             get {
                 object obj = ResourceManager.GetObject("13078274_10207811140828946_1903292277_o", resourceCulture);
@@ -113,16 +103,6 @@ namespace MemoryBrainGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _13120714_10207811138588890_598986955_o {
-            get {
-                object obj = ResourceManager.GetObject("13120714_10207811138588890_598986955_o", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap _13120714_10207811138588890_598986955_o1 {
             get {
                 object obj = ResourceManager.GetObject("13120714_10207811138588890_598986955_o1", resourceCulture);
@@ -136,6 +116,16 @@ namespace MemoryBrainGame.Properties {
         internal static System.Drawing.Bitmap angularjs {
             get {
                 object obj = ResourceManager.GetObject("angularjs", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap background {
+            get {
+                object obj = ResourceManager.GetObject("background", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,6 +163,16 @@ namespace MemoryBrainGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cover {
+            get {
+                object obj = ResourceManager.GetObject("cover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap html {
             get {
                 object obj = ResourceManager.GetObject("html", resourceCulture);
@@ -196,6 +196,16 @@ namespace MemoryBrainGame.Properties {
         internal static System.Drawing.Bitmap javascript {
             get {
                 object obj = ResourceManager.GetObject("javascript", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap layer {
+            get {
+                object obj = ResourceManager.GetObject("layer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -246,16 +256,6 @@ namespace MemoryBrainGame.Properties {
         internal static System.Drawing.Bitmap sql {
             get {
                 object obj = ResourceManager.GetObject("sql", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap turquoise_by_lairis77__www_imagesplitter_net__0_0 {
-            get {
-                object obj = ResourceManager.GetObject("turquoise_by_lairis77 [www.imagesplitter.net]-0-0", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

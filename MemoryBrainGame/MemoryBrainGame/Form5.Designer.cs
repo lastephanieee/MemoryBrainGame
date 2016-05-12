@@ -269,7 +269,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::MemoryBrainGame.Properties.Resources._13120714_10207811138588890_598986955_o;
+            this.BackgroundImage = global::MemoryBrainGame.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(584, 561);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.pictureBox11);

@@ -93,7 +93,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::MemoryBrainGame.Properties.Resources._13073173_10207811163989525_1338813235_o1;
+            this.BackgroundImage = global::MemoryBrainGame.Properties.Resources.layer;
             this.ClientSize = new System.Drawing.Size(570, 492);
             this.Controls.Add(this.hard);
             this.Controls.Add(this.easy);

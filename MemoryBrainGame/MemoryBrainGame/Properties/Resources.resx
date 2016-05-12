@@ -130,16 +130,16 @@
   <data name="13073173_10207811163989525_1338813235_o" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\13073173_10207811163989525_1338813235_o.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="13120714_10207811138588890_598986955_o" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\13120714_10207811138588890_598986955_o.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="13073173_10207811163989525_1338813235_o1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="layer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\13073173_10207811163989525_1338813235_o1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="13078274_10207811140828946_1903292277_o" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\13078274_10207811140828946_1903292277_o.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="turquoise_by_lairis77 [www.imagesplitter.net]-0-0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="cover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\turquoise_by_lairis77 [www.imagesplitter.net]-0-0.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="angularjs" type="System.Resources.ResXFileRef, System.Windows.Forms">

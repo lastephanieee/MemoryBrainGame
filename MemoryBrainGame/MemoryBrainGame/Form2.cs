@@ -12,16 +12,15 @@ namespace MemoryBrainGame
 {
     public partial class Form2 : Form
     {
-        public Image firstClicked;
-        public Image secondClicked;
-        public Image firstOld;
-        public Image secondOld;
         private Memory memory;
-        public PictureBox pbFirst;
-        public PictureBox pbSecond;
         public int[] levels = new int[3];
         public int level;
-        public Dictionary<int, Image> images;
+        List<int> X = new List<int>();
+        List<int> Y = new List<int>();
+        Random r = new Random();
+        bool again = false;
+        PictureBox pendingImage1;
+        PictureBox pendingImage2;
 
         public Form2()
         {
@@ -37,253 +36,393 @@ namespace MemoryBrainGame
             levels[2] = 30;
 
             memory = new Memory(level);
-            memory.fill();
-            images = new Dictionary<int, Image>();
-
-            initialize();
-        }
-
-        public void initialize()
-        {
-            images.Add(1, new Bitmap(MemoryBrainGame.Properties.Resources.angularjs));
-            images.Add(2, new Bitmap(MemoryBrainGame.Properties.Resources.cobol));
-            images.Add(3, new Bitmap(MemoryBrainGame.Properties.Resources.c_));
-            images.Add(4, new Bitmap(MemoryBrainGame.Properties.Resources.c__));
-            images.Add(5, new Bitmap(MemoryBrainGame.Properties.Resources.html));
-            images.Add(6, new Bitmap(MemoryBrainGame.Properties.Resources.java));
-            images.Add(7, new Bitmap(MemoryBrainGame.Properties.Resources.javascript));
-            images.Add(8, new Bitmap(MemoryBrainGame.Properties.Resources.php));
-            images.Add(9, new Bitmap(MemoryBrainGame.Properties.Resources.prolog));
-            images.Add(10, new Bitmap(MemoryBrainGame.Properties.Resources.python));
-            images.Add(11, new Bitmap(MemoryBrainGame.Properties.Resources.ruby));
-            images.Add(12, new Bitmap(MemoryBrainGame.Properties.Resources.sql));
-        }
-
-        private bool clicking(Image oldImage, Image newImage)
-        {
-            if (firstClicked == null)
-            {
-                firstClicked = newImage;
-                firstOld = oldImage;
-                return true;
-            }
-            else
-            {
-                secondClicked = newImage;
-                secondOld = newImage;
-                if (firstClicked == secondClicked)
-                {
-                    levels[level]--;
-                    if (levels[level] == 0)
-                    {
-                        this.Close();
-                        Form5 form5 = new Form5();
-                        form5.Show();
-                    }
-                    return true;
-                }
-                else
-                    return false;
-            }
+            memory.fill();   
 
         }
+        
 
-        private void pictureBox10_Click(object sender, EventArgs e)
+        private void Form2_Load(object sender, EventArgs e)
         {
-            int temp = memory.getValue(1, 3);
-            Image bmp;
-            images.TryGetValue(temp, out bmp);
-            Image oldie = this.pictureBox10.Image;
-            this.pictureBox10.Image = bmp;
+            pictureBox1.Image = Properties.Resources.angularjs;
+            pictureBox2.Image = Properties.Resources.angularjs;
+            pictureBox3.Image = Properties.Resources.cobol;
+            pictureBox4.Image = Properties.Resources.cobol;
+            pictureBox5.Image = Properties.Resources.c_;
+            pictureBox6.Image = Properties.Resources.c_;
+            pictureBox7.Image = Properties.Resources.c__;
+            pictureBox8.Image = Properties.Resources.c__;
+            pictureBox9.Image = Properties.Resources.html;
+            pictureBox10.Image = Properties.Resources.html;
+            pictureBox11.Image = Properties.Resources.java;
+            pictureBox12.Image = Properties.Resources.java;
 
-            if (!clicking(oldie, bmp))
+
+            foreach (PictureBox pb in CardsHolder.Controls)
             {
-
+                pb.Image = Properties.Resources.cover;
             }
 
-            Invalidate();
-
-        }
-
-        private void pictureBox9_Click(object sender, EventArgs e)
-        {
-            int temp = memory.getValue(0, 2);
-            Image bmp;
-            images.TryGetValue(temp, out bmp);
-            Image oldie = this.pictureBox9.Image;
-            this.pictureBox9.Image = bmp;
-
-            if (!clicking(oldie, bmp))
-            {
-
-            }
-
-            Invalidate();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            int temp = memory.getValue(0, 0);
-            Image bmp;
-            images.TryGetValue(temp, out bmp);
-            Image oldie = this.pictureBox1.Image;
-            this.pictureBox1.Image = bmp;
-
-            if (!clicking(oldie, bmp))
+            pictureBox1.Image = Properties.Resources.angularjs;
+            if(pendingImage1 == null)
             {
+                pendingImage1 = pictureBox1;
+            }
+            else if(pendingImage1 != null && pendingImage2 == null)
+            {
+                pendingImage2 = pictureBox1;
             }
 
-            Invalidate();
+            if (pendingImage1 != null && pendingImage2 != null)
+            {
+                if (pendingImage1.Tag == pendingImage2.Tag)
+                {
+                    pendingImage1 = null;
+                    pendingImage2 = null;
+                    pictureBox1.Enabled = false;
+                    pictureBox2.Enabled = false;
+                }
+                else
+                {
+                    cardsCheck.Start();
+                }
+            }
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-            int temp = memory.getValue(0, 1);
-            Image bmp;
-            images.TryGetValue(temp, out bmp);
-            Image oldie = this.pictureBox6.Image;
-            this.pictureBox6.Image = bmp;
+            pictureBox6.Image = Properties.Resources.c_;
 
-            if (!clicking(oldie, bmp))
+            if (pendingImage1 == null)
             {
-
+                pendingImage1 = pictureBox6;
             }
-            Invalidate();
+            else if (pendingImage1 != null && pendingImage2 == null)
+            {
+                pendingImage2 = pictureBox6;
+            }
 
+            if (pendingImage1 != null && pendingImage2 != null)
+            {
+                if (pendingImage1.Tag == pendingImage2.Tag)
+                {
+                    pendingImage1 = null;
+                    pendingImage2 = null;
+                    pictureBox6.Enabled = false;
+                    pictureBox5.Enabled = false;
+                }
+                else
+                {
+                    cardsCheck.Start();
+                }
+            }
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void pictureBox9_Click(object sender, EventArgs e)
         {
-            int temp = memory.getValue(1, 0);
-            Image bmp;
-            images.TryGetValue(temp, out bmp);
-            Image oldie = this.pictureBox3.Image;
-            this.pictureBox3.Image = bmp;
+            pictureBox9.Image = Properties.Resources.html;
 
-            if (!clicking(oldie, bmp))
+            if (pendingImage1 == null)
             {
-
+                pendingImage1 = pictureBox9;
+            }
+            else if (pendingImage1 != null && pendingImage2 == null)
+            {
+                pendingImage2 = pictureBox9;
             }
 
-            Invalidate();
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-            int temp = memory.getValue(1, 1);
-            Image bmp;
-            images.TryGetValue(temp, out bmp);
-            Image oldie = this.pictureBox4.Image;
-            this.pictureBox4.Image = bmp;
-
-            if (!clicking(oldie, bmp))
+            if (pendingImage1 != null && pendingImage2 != null)
             {
-
+                if (pendingImage1.Tag == pendingImage2.Tag)
+                {
+                    pendingImage1 = null;
+                    pendingImage2 = null;
+                    pictureBox9.Enabled = false;
+                    pictureBox10.Enabled = false;
+                }
+                else
+                {
+                    cardsCheck.Start();
+                }
             }
-
-            Invalidate();
-        }
-
-        private void pictureBox7_Click(object sender, EventArgs e)
-        {
-            int temp = memory.getValue(1, 2);
-            Image bmp;
-            images.TryGetValue(temp, out bmp);
-            Image oldie = this.pictureBox7.Image;
-            this.pictureBox7.Image = bmp;
-
-            if (!clicking(oldie, bmp))
-            {
-
-            }
-
-            Invalidate();
         }
 
         private void pictureBox12_Click(object sender, EventArgs e)
         {
-            int temp = memory.getValue(0, 3);
-            Image bmp;
-            images.TryGetValue(temp, out bmp);
-            Image oldie = this.pictureBox12.Image;
-            this.pictureBox12.Image = bmp;
+            pictureBox12.Image = Properties.Resources.java;
 
-            if (!clicking(oldie, bmp))
+            if (pendingImage1 == null)
             {
-
+                pendingImage1 = pictureBox12;
+            }
+            else if (pendingImage1 != null && pendingImage2 == null)
+            {
+                pendingImage2 = pictureBox12;
             }
 
-            Invalidate();
+            if (pendingImage1 != null && pendingImage2 != null)
+            {
+                if (pendingImage1.Tag == pendingImage2.Tag)
+                {
+                    pendingImage1 = null;
+                    pendingImage2 = null;
+                    pictureBox12.Enabled = false;
+                    pictureBox11.Enabled = false;
+                }
+                else
+                {
+                    cardsCheck.Start();
+                }
+            }
         }
 
-        private void pictureBox11_Click(object sender, EventArgs e)
+        private void pictureBox3_Click(object sender, EventArgs e)
         {
-            int temp = memory.getValue(2, 3);
-            Image bmp;
-            images.TryGetValue(temp, out bmp);
-            Image oldie = this.pictureBox11.Image;
-            this.pictureBox11.Image = bmp;
+            pictureBox3.Image = Properties.Resources.cobol;
 
-            if (!clicking(oldie, bmp))
+            if (pendingImage1 == null)
             {
-
+                pendingImage1 = pictureBox3;
+            }
+            else if (pendingImage1 != null && pendingImage2 == null)
+            {
+                pendingImage2 = pictureBox3;
             }
 
-            Invalidate();
+            if (pendingImage1 != null && pendingImage2 != null)
+            {
+                if (pendingImage1.Tag == pendingImage2.Tag)
+                {
+                    pendingImage1 = null;
+                    pendingImage2 = null;
+                    pictureBox3.Enabled = false;
+                    pictureBox4.Enabled = false;
+                }
+                else
+                {
+                    cardsCheck.Start();
+                }
+            }
         }
 
-        private void pictureBox8_Click(object sender, EventArgs e)
+        private void pictureBox4_Click(object sender, EventArgs e)
         {
-            int temp = memory.getValue(2, 2);
-            Image bmp;
-            images.TryGetValue(temp, out bmp);
-            Image oldie = this.pictureBox8.Image;
-            this.pictureBox8.Image = bmp;
+            pictureBox4.Image = Properties.Resources.cobol;
 
-            if (!clicking(oldie, bmp))
+            if (pendingImage1 == null)
             {
-
+                pendingImage1 = pictureBox4;
+            }
+            else if (pendingImage1 != null && pendingImage2 == null)
+            {
+                pendingImage2 = pictureBox4;
             }
 
-            Invalidate();
+            if (pendingImage1 != null && pendingImage2 != null)
+            {
+                if (pendingImage1.Tag == pendingImage2.Tag)
+                {
+                    pendingImage1 = null;
+                    pendingImage2 = null;
+                    pictureBox4.Enabled = false;
+                    pictureBox3.Enabled = false;
+                }
+                else
+                {
+                    cardsCheck.Start();
+                }
+            }
         }
 
-        private void pictureBox5_Click(object sender, EventArgs e)
+        private void pictureBox7_Click(object sender, EventArgs e)
         {
-            int temp = memory.getValue(2, 1);
-            Image bmp;
-            images.TryGetValue(temp, out bmp);
-            Image oldie = this.pictureBox5.Image;
-            this.pictureBox5.Image = bmp;
+            pictureBox7.Image = Properties.Resources.c__;
 
-            if (!clicking(oldie, bmp))
+            if (pendingImage1 == null)
             {
-
+                pendingImage1 = pictureBox7;
+            }
+            else if (pendingImage1 != null && pendingImage2 == null)
+            {
+                pendingImage2 = pictureBox7;
             }
 
-            Invalidate();
+            if (pendingImage1 != null && pendingImage2 != null)
+            {
+                if (pendingImage1.Tag == pendingImage2.Tag)
+                {
+                    pendingImage1 = null;
+                    pendingImage2 = null;
+                    pictureBox7.Enabled = false;
+                    pictureBox8.Enabled = false;
+                }
+                else
+                {
+                    cardsCheck.Start();
+                }
+            }
+        }
+
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+            pictureBox10.Image = Properties.Resources.html;
+
+            if (pendingImage1 == null)
+            {
+                pendingImage1 = pictureBox10;
+            }
+            else if (pendingImage1 != null && pendingImage2 == null)
+            {
+                pendingImage2 = pictureBox10;
+            }
+
+            if (pendingImage1 != null && pendingImage2 != null)
+            {
+                if (pendingImage1.Tag == pendingImage2.Tag)
+                {
+                    pendingImage1 = null;
+                    pendingImage2 = null;
+                    pictureBox10.Enabled = false;
+                    pictureBox9.Enabled = false;
+                }
+                else
+                {
+                    cardsCheck.Start();
+                }
+            }
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            int temp = memory.getValue(2, 0);
+            pictureBox2.Image = Properties.Resources.angularjs;
 
-            Image bmp;
-            images.TryGetValue(temp, out bmp);
-            Image oldie = this.pictureBox2.Image;
-            this.pictureBox2.Image = bmp;
-
-            if (!clicking(oldie, bmp))
+            if (pendingImage1 == null)
             {
-
+                pendingImage1 = pictureBox2;
+            }
+            else if (pendingImage1 != null && pendingImage2 == null)
+            {
+                pendingImage2 = pictureBox2;
             }
 
-            Invalidate();
+            if (pendingImage1 != null && pendingImage2 != null)
+            {
+                if (pendingImage1.Tag == pendingImage2.Tag)
+                {
+                    pendingImage1 = null;
+                    pendingImage2 = null;
+                    pictureBox2.Enabled = false;
+                    pictureBox1.Enabled = false;
+                }
+                else
+                {
+                    cardsCheck.Start();
+                }
+            }
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            pictureBox5.Image = Properties.Resources.c_;
+
+            if (pendingImage1 == null)
+            {
+                pendingImage1 = pictureBox5;
+            }
+            else if (pendingImage1 != null && pendingImage2 == null)
+            {
+                pendingImage2 = pictureBox5;
+            }
+
+            if (pendingImage1 != null && pendingImage2 != null)
+            {
+                if (pendingImage1.Tag == pendingImage2.Tag)
+                {
+                    pendingImage1 = null;
+                    pendingImage2 = null;
+                    pictureBox5.Enabled = false;
+                    pictureBox6.Enabled = false;
+                }
+                else
+                {
+                    cardsCheck.Start();
+                }
+            }
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            pictureBox8.Image = Properties.Resources.c__;
+
+            if (pendingImage1 == null)
+            {
+                pendingImage1 = pictureBox8;
+            }
+            else if (pendingImage1 != null && pendingImage2 == null)
+            {
+                pendingImage2 = pictureBox8;
+            }
+
+            if (pendingImage1 != null && pendingImage2 != null)
+            {
+                if (pendingImage1.Tag == pendingImage2.Tag)
+                {
+                    pendingImage1 = null;
+                    pendingImage2 = null;
+                    pictureBox8.Enabled = false;
+                    pictureBox7.Enabled = false;
+                }
+                else
+                {
+                    cardsCheck.Start();
+                }
+            }
+        }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+            pictureBox11.Image = Properties.Resources.java;
+
+            if (pendingImage1 == null)
+            {
+                pendingImage1 = pictureBox11;
+            }
+            else if (pendingImage1 != null && pendingImage2 == null)
+            {
+                pendingImage2 = pictureBox11;
+            }
+
+            if (pendingImage1 != null && pendingImage2 != null)
+            {
+                if (pendingImage1.Tag == pendingImage2.Tag)
+                {
+                    pendingImage1 = null;
+                    pendingImage2 = null;
+                    pictureBox11.Enabled = false;
+                    pictureBox12.Enabled = false;
+                }
+                else
+                {
+                    cardsCheck.Start();
+                }
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             progressBar1.Increment(+1);
+        }
+
+        private void cardsCheck_Tick(object sender, EventArgs e)
+        {
+            cardsCheck.Stop();
+            pendingImage1.Image = Properties.Resources.cover;
+            pendingImage2.Image = Properties.Resources.cover;
+            pendingImage1 = null;
+            pendingImage2 = null;
         }
     }
 }
