@@ -457,8 +457,11 @@ namespace MemoryBrainGame
         private void timer1_Tick(object sender, EventArgs e)
         {
             progressBar1.Increment(+1);
+            Console.WriteLine(progressBar1.Value);
+            
             if (progressBar1.Value == 250)
             {
+                timer1.Stop();
                 // do whatever you want to do
                 DialogResult result = MessageBox.Show("Do you want to try again?", "Game Over!",
                 MessageBoxButtons.YesNo);
@@ -472,8 +475,11 @@ namespace MemoryBrainGame
                 {
                     Application.Exit();
                 }
+              
             }
         }
+
+       
 
         private void cardsCheck_Tick(object sender, EventArgs e)
         {

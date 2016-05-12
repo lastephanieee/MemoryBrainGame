@@ -85,8 +85,9 @@ namespace MemoryBrainGame
         private void timer1_Tick(object sender, EventArgs e)
         {
             progressBar3.Increment(+1);
-            if (progressBar3.Value.Equals(progressBar3.Maximum))
+            if (progressBar3.Value == progressBar3.Maximum)
             {
+                timer1.Stop();
                 // do whatever you want to do
                 DialogResult result = MessageBox.Show("Do you want to try again?", "Game Over!",
                MessageBoxButtons.YesNo);
