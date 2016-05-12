@@ -12,15 +12,12 @@ namespace MemoryBrainGame
 {
     public partial class Form2 : Form
     {
-        private Memory memory;
         public int[] levels = new int[3];
         public int level;
-        List<int> X = new List<int>();
-        List<int> Y = new List<int>();
-        Random r = new Random();
-        bool again = false;
         PictureBox pendingImage1;
         PictureBox pendingImage2;
+        List<Point> points = new List<Point>();
+        Random r = new Random();
 
         public Form2()
         {
@@ -35,14 +32,16 @@ namespace MemoryBrainGame
             levels[1] = 20;
             levels[2] = 30;
 
-            memory = new Memory(level);
-            memory.fill();   
-
         }
         
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            foreach (PictureBox pb in CardsHolder.Controls)
+            {
+                points.Add(pb.Location);
+            }     
+
             pictureBox1.Image = Properties.Resources.angularjs;
             pictureBox2.Image = Properties.Resources.angularjs;
             pictureBox3.Image = Properties.Resources.cobol;
@@ -56,6 +55,13 @@ namespace MemoryBrainGame
             pictureBox11.Image = Properties.Resources.java;
             pictureBox12.Image = Properties.Resources.java;
 
+            foreach (PictureBox pb in CardsHolder.Controls)
+            {
+                int next = r.Next(points.Count);
+                Point p = points[next];
+                pb.Location = p;
+                points.Remove(p);
+            }
 
             foreach (PictureBox pb in CardsHolder.Controls)
             {
