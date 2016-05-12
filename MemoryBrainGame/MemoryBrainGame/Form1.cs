@@ -35,6 +35,7 @@ namespace MemoryBrainGame
             if (result == DialogResult.Yes)
             {
                 Application.Exit();
+                Environment.Exit(0);
             }
         }
 
